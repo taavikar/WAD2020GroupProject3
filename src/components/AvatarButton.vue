@@ -41,7 +41,18 @@ export default {
   methods: {
     toggle () {
       this.active = !this.active
+    },
+    close (e) {
+      if (!this.$el.contains(e.target)){
+        this.active = false
+      }
     }
+  },
+  mounted () {
+    document.addEventListener('click', this.close)
+  },
+  beforeDestroy () {
+    document.removeEventListener('click',this.close)
   }
 }
 </script>

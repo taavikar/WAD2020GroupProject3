@@ -22,7 +22,8 @@
             <input type="password" name="password" placeholder="Password">
           </div>
           <div>
-            <button class="button" type="submit" name="login">Log In</button>
+
+            <button class="button" type="submit" name="login"><router-link class="login" to="/">Log In</router-link></button>
           </div>
           <div>
             <small>
@@ -65,5 +66,9 @@ export default {
 #login-container form div > input {
   padding: 8px 16px;
   margin: 4px 0;
+}
+.login {
+  color: black;
+  text-decoration: unset
 }
 </style>
