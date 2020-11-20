@@ -2,18 +2,18 @@
   <div class="avatar-container">
 
     <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" v-on:click="toggle()">
-    <div style="background: white; text-align: left; font-family: Arial; font-weight: bolder; margin-left: auto; position: absolute" class="drop-down-container" v-if="active">
+    <div class="drop-down-container" v-if="active">
       <hr/>
       <div id="user-name">{{avatarInfo.firstname}} {{avatarInfo.lastname}}</div>
       <hr/>
       <div id="user-email">{{avatarInfo.email}}</div>
       <hr/>
       <div>
-              <a href="browse.html">Browse</a>
-            </div>
+        <router-link to="/browse">Browse</router-link>
+      </div>
       <hr/>
       <div>
-              <a href="login.html">Log Out</a>
+        <router-link to="/logout">Logout</router-link>
       </div>
     </div>
   </div>
@@ -27,7 +27,6 @@ export default {
   components: {
 
   },
-  props: ["avatarInfo"],
   data () {
     return {
       avatarInfo: [],
@@ -96,5 +95,13 @@ nav div.avatar-container {
 }
 .separator {
   border: #263238;
+}
+.drop-down-container{
+  background: white;
+  text-align: left;
+  font-family: Arial;
+  font-weight: bolder;
+  display: inherit;
+  margin-left: 50%;
 }
 </style>

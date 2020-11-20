@@ -1,39 +1,36 @@
 <template>
-  <body id="app">
+  <div>
     <NavBar/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </body>
+    <router-view/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 import NavBar from "@/components/NavBar";
-import AvatarButton from "@/components/AvatarButton";
-
-
 export default {
-  name: 'App',
-  components: {
-    AvatarButton,
-    NavBar,
-    HelloWorld,
-  },
-  data() {
-
-  },
-  methods: {
-
-  }
+  components: {NavBar}
 }
 </script>
 
 <style>
-body {
-  background-color: #0277bd;
-  color: #263238;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
-img{
-  height: 30px;
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
