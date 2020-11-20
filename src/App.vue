@@ -9,13 +9,15 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import NavBar from "@/components/NavBar";
+import AvatarButton from "@/components/AvatarButton";
 
 
 export default {
   name: 'App',
   components: {
+    AvatarButton,
     NavBar,
-    HelloWorld
+    HelloWorld,
   },
   data() {
 

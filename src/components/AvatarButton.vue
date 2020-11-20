@@ -1,18 +1,20 @@
 <template>
   <div class="avatar-container">
 
-    <img class="avatar" v-on:click="toggle()">
-    <div class="drop-down-container" v-if="active">
-      <span id="user-name">{{avatarInfo.firstname}} {{avatarInfo.lastname}}</span>
-      <span id="user-email">{{avatarInfo.email}}</span>
-      <span class="separator"></span>
-      <span>
+    <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" v-on:click="toggle()">
+    <div style="background: white; text-align: left; font-family: Arial; font-weight: bolder; margin-left: auto; position: absolute" class="drop-down-container" v-if="active">
+      <hr/>
+      <div id="user-name">{{avatarInfo.firstname}} {{avatarInfo.lastname}}</div>
+      <hr/>
+      <div id="user-email">{{avatarInfo.email}}</div>
+      <hr/>
+      <div>
               <a href="browse.html">Browse</a>
-            </span>
-      <span class="separator"></span>
-      <span>
+            </div>
+      <hr/>
+      <div>
               <a href="login.html">Log Out</a>
-            </span>
+      </div>
     </div>
   </div>
 </template>
@@ -62,6 +64,9 @@ div img {
   object-fit: cover;
   object-position: top center;
 }
+div div a {
+  margin: 5px 5px 5px 5px;
+}
 
 button:hover {
   box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
@@ -82,5 +87,14 @@ header:hover {
 nav div.avatar-container {
   margin-right: 15px;
   text-align: right;
+}
+#user-name{
+  margin: 5px 5px 5px 5px
+}
+#user-email{
+  margin: 5px 5px 5px 5px
+}
+.separator {
+  border: #263238;
 }
 </style>
