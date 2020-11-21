@@ -24,7 +24,6 @@
         </div>
       </nav>
     </header>
-    <section class="main-container"></section>
     <!-- Not 100% sure about CSS -->
 </template>
 <script>
