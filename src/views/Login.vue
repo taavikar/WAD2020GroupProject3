@@ -14,6 +14,8 @@
       </div>
       <div>
         <h3>Please Log In</h3>
+
+<!--        TODO Use router instead of hardcoding -->
         <form action="index.html" method="post">
           <div>
             <input type="text" name="email" placeholder="Email">
@@ -52,7 +54,7 @@ export default {
 }
 
 #login-container {
-  background-image: src="./assets/logo.png";
+  background-image: url("../assets/logo.png");
   background-size: 20% auto;
   background-repeat: no-repeat;
   background-position: 15px 15px;

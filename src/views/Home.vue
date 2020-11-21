@@ -2,8 +2,8 @@
   <div class="home">
     <NavBar/>
     <section class="main-container">
-      <div v-for="index in posts.length" :key="index">
-        <Post :index="(index-1)"></Post>
+      <div v-for="post in posts" :key="post">
+        <Post :post="post"></Post>
       </div>
     </section>
   </div>
@@ -20,31 +20,16 @@ export default {
     NavBar,
     Post
   },
+  //
   computed: {
     posts: function () {
-
-      // if (this === undefined) {
-      //   console.log("no fucking me");
-      //   return
-      // }
-      // if (this.$store === undefined) {
-      //   console.log("no store");
-      //   return
-      // }
-      // if (this.$store.getters === undefined) {
-      //   console.log("no getters");
-      //   return
-      // }
-      // if (this.$store.getters.getPosts === undefined) {
-      //   console.log("getPosts is not defined ?!?!?!?!?!?!?");
-      //   return
-      // }
-      // console.log("from here" + this.$store.getters.getPosts[0].id);
-      // console.log("from here" + this.$store.getters.getPosts[1].id);
-      // console.log("from here" + this.$store.getters.getPosts[2].id);
-      // console.log("from here" + this.$store.getters.getPosts[3].id);
       return this.$store.getters.getPosts
     }
+  },
+  // enne komponendi loomist käivitatakse getPosts main.js-is, laetakse post-id API-st ära ja siis minnakse komponendi loomisega edasi.
+  //TODO find the cause of errors in console, fix them
+  beforeCreate() {
+    this.$store.dispatch('findPostsFromAPI')
   }
 }
 </script>
