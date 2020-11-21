@@ -97,6 +97,7 @@ header:hover {
 nav div.avatar-container {
   margin-right: 15px;
   text-align: right;
+  width: 10px;
 }
 #user-name{
   margin: 5px 5px 5px 5px
@@ -113,6 +114,6 @@ nav div.avatar-container {
   font-family: Arial;
   font-weight: bolder;
   display: inherit;
-  margin-left: 50%;
+  margin-left: 20%;
 }
 </style>
