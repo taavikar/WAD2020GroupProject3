@@ -13,14 +13,14 @@
       </div>
       <hr/>
       <div>
-        <router-link to="/logout">Logout</router-link>
+        <router-link to="/login">Logout</router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from "axios";   //TODO just a reminder to check if this should be refactored or not
 
 export default {
   name: "AvatarButton",
