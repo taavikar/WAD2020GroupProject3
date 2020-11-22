@@ -2,7 +2,9 @@
   <header>
     <nav>
       <div class="logo-container">
-        <img alt="postIt" src="../assets/logo.png">
+        <router-link to="/">
+          <img alt="postIt" src="../assets/logo.png">
+        </router-link>
       </div>
       <div class="search-container">
         <input type="text" name="search"><button type="button">Search</button>
@@ -35,6 +37,7 @@ export default {
 </script>
 
 <style scoped>
+
 #login-container {
   background-image: url(../assets/logo.png);
   background-size: 20% auto;

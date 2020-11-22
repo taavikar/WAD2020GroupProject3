@@ -15,7 +15,6 @@ const routes = [
   {path: '/', name: "home", component: Home},
   {path: '/login',name: "login",  component: Login},
   {path: '/browse', name: "browse", component: Browse},
-  // {path: '*', component: NotFound}   //TODO if there's time, would be nice to have a NotFound page also
 ];
 
 const router = new VueRouter({
@@ -73,12 +72,10 @@ const store = new Vuex.Store({
   
   // public getters in java
   getters: {
-    getPosts: function (state) {
-      return state.posts
-    },
-    getProfiles: function(state){
-      return state.profiles
-    }
+    getPostsLength: state => state.posts.length,
+    getPost: state => index => state.posts[index],
+    getProfilesLength: state => state.profiles.length,
+    getProfile: state => index => state.profiles[index]
   }
 });
 

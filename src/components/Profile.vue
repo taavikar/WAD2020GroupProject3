@@ -9,13 +9,12 @@
 export default {
     name:"Profile",
     props:{
-        profile:Object,
+        index: Number,
         followed: Boolean
     },
     computed: {
-        profiles: function(){
-            console.log(this.$store.getters.getProfiles)
-            return this.$store.getters.getProfiles
+        profile: function(){
+            return this.$store.getters.getProfile(this.index)
         }
     },
     methods:{

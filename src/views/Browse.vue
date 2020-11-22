@@ -2,7 +2,7 @@
   <div class = "browse">
     <NavBar/>
       <section class="main-container">
-        <Profile :profile="profile" v-for="profile in profiles" :key="profile"></Profile>
+        <Profile :index="index | decrementByOne(index)" v-for="index in profilesLength" :key="index"></Profile>
     </section>
     </div>
     <!-- Not 100% sure about CSS -->
@@ -17,9 +17,12 @@ export default {
     Profile
   },
   computed: {
-    profiles: function(){
-      return this.$store.getters.getProfiles
+    profilesLength: function(){
+      return this.$store.getters.getProfilesLength
     }
+  },
+  filters: {
+    decrementByOne: index => index-1
   },
   beforeCreate(){
     this.$store.dispatch('findProfilesFromAPI')

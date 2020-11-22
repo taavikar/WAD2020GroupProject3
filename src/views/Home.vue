@@ -2,8 +2,8 @@
   <div class="home">
     <NavBar/>
     <section class="main-container">
-      <div v-for="post in posts" :key="post">
-        <Post :post="post"></Post>
+      <div v-for="index in postsLength" :key="index">
+        <Post :index="index | decrementByOne(index)"></Post>
       </div>
     </section>
   </div>
@@ -20,14 +20,14 @@ export default {
     NavBar,
     Post
   },
-  //
   computed: {
-    posts: function () {
-      return this.$store.getters.getPosts
+    postsLength: function () {
+      return this.$store.getters.getPostsLength
     }
   },
-  // enne komponendi loomist käivitatakse getPosts main.js-is, laetakse post-id API-st ära ja siis minnakse komponendi loomisega edasi.
-  //TODO find the cause of errors in console, fix them
+  filters: {
+    decrementByOne: (index) => index-1
+  },
   beforeCreate() {
     this.$store.dispatch('findPostsFromAPI')
   }

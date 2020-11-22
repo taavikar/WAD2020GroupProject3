@@ -9,10 +9,7 @@
     </span>
     <div v-if="post.media !== null" class="post-image">
       <img v-if="post.media.type === 'image'" :src="post.media.url" :alt="post.text">
-      <video v-if="post.media.type === 'video'">
-
-<!--        TODO video is not working properly and I don't know why              -->
-
+      <video controls v-if="post.media.type === 'video' ">
         <source type="video/mp4" :src="post.media.url"/>
         Your browser does not support the video tag.
       </video>
@@ -30,13 +27,12 @@
 export default {
   name: "Post",
   props: {
-    post: Object,
+    index: Number,
     liked: Boolean
   },
   computed: {
-    posts: function () {
-      console.log(this.$store.getters.getPosts)
-      return this.$store.getters.getPosts
+    post: function () {
+      return this.$store.getters.getPost(this.index);
     }
   },
   methods: {
@@ -97,8 +93,9 @@ button:hover {
 
 .post .post-author .post-author-info small {
   position: absolute;
-  top: 10px;
-  left: 35px;
+  top: 17px;
+  left: 50px;
+  font-weight: bolder;
 }
 
 .post .post-author .post-author-info + small {
