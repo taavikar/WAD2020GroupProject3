@@ -5,8 +5,8 @@
         <Profile :index="index | decrementByOne(index)" v-for="index in profilesLength" :key="index"></Profile>
     </section>
     </div>
-    <!-- Not 100% sure about CSS -->
 </template>
+
 <script>
 import NavBar from "@/components/NavBar";
 import Profile from "@/components/Profile"

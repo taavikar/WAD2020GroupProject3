@@ -21,21 +21,6 @@ const router = new VueRouter({
   routes,
 });
 
-
-// ===================================================================================================================
-// Lühidalt Vuex-ist nii nagu mina aru sain. Ärge 100% tõepähe võtke kui erroreid pilduma hakkab
-//
-// * 'state'                hoiab kogu veebilehe data-t, kõik komponendid näevad seda
-// * 'getters'              siit saad kätte vajalikud andmed 'state'-st
-// * 'actions, mutations'   muudavad state's olevad andmeid (kumba kasutada? oleneb kas sync või async)
-//
-// Accessing store: this.$store.getters.getMyData                                                           GETTERS
-//                  this.$store.dispatch.('funktsiooniNimi', 'saad', 'lisada', 'argumente', 'kui', 'vaja')  ACTIONS
-//                  this.$store.commit.('funktsiooniNimi', 'saad', 'lisada', 'argumente', 'kui', 'vaja')    MUTATIONS
-//
-// ===================================================================================================================
-
-
 const store = new Vuex.Store({
   
   // these are class fields in java. Here you store all the data.
@@ -45,9 +30,6 @@ const store = new Vuex.Store({
     avatar: []
   },
   // actions are public setters in java, these can be asynchronous
-  // Kui sul on vaja mõnes komponendis infot uuendada, siis pead kutsuma välja actions (this.$store.dispatch.....).
-  // Kui API-st saadakse status 200 (kõik OK), siis läbi mutations-i saab kätte postid (this.mutations.commit......).
-  // VIST peaks nii olema, aga do your own research
   actions: {
     findPostsFromAPI({commit}) {
       axios.get('https://private-anon-5c37796155-wad20postit.apiary-mock.com/posts')

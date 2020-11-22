@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style scoped>
-
 #login-container form div > input {
   padding: 8px 16px;
   margin: 4px 0;

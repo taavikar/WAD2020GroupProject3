@@ -20,16 +20,10 @@
 </template>
 
 <script>
-   //TODO just a reminder to check if this should be refactored or not
-
 export default {
   name: "AvatarButton",
-  components: {
-
-  },
   data () {
     return {
-      avatarInfo: [],
       active: false
     }
   },
@@ -69,6 +63,7 @@ button {
   border: none;
   border-radius: 4px;
 }
+
 div img {
   height: 100%;
   width: 30px;
@@ -77,6 +72,7 @@ div img {
   object-fit: cover;
   object-position: top center;
 }
+
 div div a {
   margin: 5px 5px 5px 5px;
 }
@@ -102,12 +98,15 @@ nav div.avatar-container {
   text-align: right;
   width: 10px;
 }
+
 #user-name{
   margin: 5px 5px 5px 5px
 }
+
 #user-email{
   margin: 5px 5px 5px 5px
 }
+
 .drop-down-container{
   background: white;
   text-align: left;

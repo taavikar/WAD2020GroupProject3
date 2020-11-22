@@ -5,6 +5,7 @@
         <button :class="{'followed': followed}" @click="toggleFollowed" type="button" class="follow-button">Follow</button>
     </div>
 </template>
+
 <script>
 export default {
     name:"Profile",
@@ -24,6 +25,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 button {
     padding: 8px 16px;
@@ -33,6 +35,7 @@ button {
     border: none;
     border-radius: 4px;
 }
+
 .profile {
     width: 45%;
     display: inline-block;
@@ -41,6 +44,7 @@ button {
     text-align: center;
     margin: 1%;
 }
+
 .profile img{
     width: 75px;
     height: 75px;
@@ -64,4 +68,3 @@ button {
     color: #82008f;
 }
 </style>>
-

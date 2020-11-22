@@ -14,8 +14,6 @@
       </div>
       <div>
         <h3>Please Log In</h3>
-
-<!--        TODO Use router instead of hardcoding -->
         <form action="index.html" method="post">
           <div>
             <input type="text" name="email" placeholder="Email">
@@ -24,7 +22,6 @@
             <input type="password" name="password" placeholder="Password">
           </div>
           <div>
-
             <button class="button" type="submit" name="login"><router-link class="login" to="/">Log In</router-link></button>
           </div>
           <div>
@@ -69,6 +66,7 @@ export default {
   padding: 8px 16px;
   margin: 4px 0;
 }
+
 .login {
   color: black;
   text-decoration: unset
