@@ -16,39 +16,16 @@
 
 <script>
 import AvatarButton from "@/components/AvatarButton";
-import axios from "axios";
 export default {
   name: "NavBar",
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    AvatarButton
-  },
-  data () {
-    return {
-      avatarInfo: []
-    }
-  },
-  created() {
-    axios.get('https://private-517bb-wad20postit.apiary-mock.com/users/1')
-        .then(res => this.avatarInfo = res.data)
-        .catch(err => console.log(err));
+    AvatarButton,
   }
 }
 </script>
 
 <style scoped>
-
-#login-container {
-  background-image: url(../assets/logo.png);
-  background-size: 20% auto;
-  background-repeat: no-repeat;
-  background-position: 15px 15px;
-  min-width: 25%;
-  padding: 45px 45px;
-  background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
-  text-align: center;
-}
 
 #login-container form div > input {
   padding: 8px 16px;

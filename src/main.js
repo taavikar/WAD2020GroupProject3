@@ -41,7 +41,8 @@ const store = new Vuex.Store({
   // these are class fields in java. Here you store all the data.
   state: {
     posts: [],
-    profiles: []
+    profiles: [],
+    avatar: []
   },
   // actions are public setters in java, these can be asynchronous
   // Kui sul on vaja mõnes komponendis infot uuendada, siis pead kutsuma välja actions (this.$store.dispatch.....).
@@ -57,6 +58,11 @@ const store = new Vuex.Store({
       axios.get("https://private-anon-c71abc3c34-wad20postit.apiary-mock.com/profiles")
       .then(response => commit('SET_PROFILES', response.data))
       .catch(error => console.log("Could not fetch profiles! " + error))
+    },
+    findAvatarFromAPI({commit}){
+      axios.get("https://private-517bb-wad20postit.apiary-mock.com/users/1")
+          .then(response => commit('SET_AVATAR', response.data))
+          .catch(error => console.log("Could not fetch profiles! " + error))
     }
   },
   
@@ -67,6 +73,9 @@ const store = new Vuex.Store({
     },
     SET_PROFILES(state, profiles){
       state.profiles = profiles
+    },
+    SET_AVATAR(state, avatar){
+      state.avatar = avatar
     }
   },
   
@@ -75,7 +84,8 @@ const store = new Vuex.Store({
     getPostsLength: state => state.posts.length,
     getPost: state => index => state.posts[index],
     getProfilesLength: state => state.profiles.length,
-    getProfile: state => index => state.profiles[index]
+    getProfile: state => index => state.profiles[index],
+    getAvatar: state => state.avatar
   }
 });
 

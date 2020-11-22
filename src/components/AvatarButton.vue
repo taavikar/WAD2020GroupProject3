@@ -1,12 +1,12 @@
 <template>
   <div class="avatar-container">
 
-    <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" v-on:click="toggle()">
+    <img class="avatar" :src="avatar1.avatar" v-on:click="toggle()" :alt="avatar1.firstname">
     <div class="drop-down-container" v-if="active">
       <hr/>
-      <div id="user-name">{{avatarInfo.firstname}} {{avatarInfo.lastname}}</div>
+      <div id="user-name">{{avatar1.firstname}} {{avatar1.lastname}}</div>
       <hr/>
-      <div id="user-email">{{avatarInfo.email}}</div>
+      <div id="user-email">{{avatar1.email}}</div>
       <hr/>
       <div>
         <router-link to="/browse">Browse</router-link>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import axios from "axios";   //TODO just a reminder to check if this should be refactored or not
+   //TODO just a reminder to check if this should be refactored or not
 
 export default {
   name: "AvatarButton",
@@ -33,10 +33,13 @@ export default {
       active: false
     }
   },
+  computed: {
+    avatar1: function(){
+      return this.$store.getters.getAvatar
+    }
+  },
   created() {
-    axios.get('https://private-517bb-wad20postit.apiary-mock.com/users/1')
-      .then(res => this.avatarInfo = res.data)
-      .catch(err => console.log(err));
+    this.$store.dispatch("findAvatarFromAPI")
   },
   methods: {
     toggle () {
@@ -104,9 +107,6 @@ nav div.avatar-container {
 }
 #user-email{
   margin: 5px 5px 5px 5px
-}
-.separator {
-  border: #263238;
 }
 .drop-down-container{
   background: white;
